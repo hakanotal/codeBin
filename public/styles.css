@@ -1,0 +1,101 @@
+body {
+    background-color: #282c34;
+    font-family: monospace;
+    margin: 0;
+}
+h1 {
+    font-size: xx-large;
+    color: white;
+    text-align: center;
+    margin-top: 10%;
+}
+h6 {
+    color: #999;
+    font-size: large;
+    text-align: center;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: #666;
+    opacity: 0.6;
+    transition: opacity 200ms ease-in-out;
+    display: flex;
+}
+
+.nav:hover {
+    opacity: 1;
+}
+
+button {
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #999;
+}
+
+button:disabled,
+button[disabled] {
+    background-color: transparent;
+    color: #999;
+}
+
+#logo {
+    font-size: 2rem;
+}
+
+label {
+    color: #666;
+}
+
+select {
+    background-color: #999;
+}
+
+.wrapper {
+    display: flex;
+    padding: 1rem 0.5rem;
+    font-size: 1rem;
+}
+
+.line-numbers {
+    color: #999;
+    text-align: end;
+}
+
+pre {
+    margin: 0;
+}
+
+#code-display {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+textarea {
+    background-color: transparent;
+    resize: none;
+    width: 100%;
+    padding: 0;
+    margin-left: 1rem;
+    color: white;
+    min-height: 90vh;
+    border: none;
+    outline: none;
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #999;
+}

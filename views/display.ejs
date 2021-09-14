@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("_head.ejs") %>
+    </head>
+    <body>
+        <%- include("_navbar.ejs") %>
+        <div class="wrapper">
+            <div class="line-numbers">
+                <% for(let i=1; i<=locals.code.split('\n').length; i++) {%>
+                <div><%= i %></div>
+                <% } %>
+            </div>
+            <div>
+                <pre><code id="code-display" class=<%= locals.type %>><%= locals.code %></code></pre>
+            </div>
+        </div>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

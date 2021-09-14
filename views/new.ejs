@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("_head.ejs") %>
+    </head>
+    <body>
+        <%- include("_navbar.ejs") %>
+        <form id="save-form" action="/save" method="POST">
+            <label for="codeType">select file type:</label>
+            <select name="codeType">
+                <option value="plaintext">Text</option>
+                <option value="javascript">JS</option>
+                <option value="html">HTML</option>
+                <option value="python">Python</option>
+                <option value="cpp">C++</option>
+            </select>
+
+            <div class="wrapper">
+                <div class="line-numbers">&gt;</div>
+                <textarea
+                    autofocus
+                    name="codeFile"
+                    placeholder="write your code here"
+                ><%= locals.code %></textarea>
+            </div>
+        </form>
+        <script>
+            autosize(document.querySelector('textarea'));
+        </script>
+    </body>
+</html>

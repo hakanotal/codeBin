@@ -1,0 +1,24 @@
+{
+    "name": "code-bin",
+    "version": "1.0.0",
+    "description": "Share code files easily",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app",
+        "dev": "nodemon app",
+        "test": "jest --verbose --coverage --forceExit"
+    },
+    "author": "Hakan Otal",
+    "license": "ISC",
+    "dependencies": {
+        "ejs": "^3.1.6",
+        "express": "^4.17.1",
+        "mongoose": "^6.0.4"
+    },
+    "devDependencies": {
+        "dotenv": "^10.0.0",
+        "jest": "^27.1.0",
+        "nodemon": "^2.0.12",
+        "supertest": "^6.1.6"
+    }
+}

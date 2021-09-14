@@ -1,0 +1,48 @@
+<script>
+    function make_request(method, url) {
+        var form = document.createElement('form');
+        form.setAttribute('method', method);
+        form.setAttribute('action', document.location.origin + url);
+        form.style.display = 'hidden';
+        document.body.appendChild(form);
+        form.submit();
+    }
+    const path = document.location.pathname;
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+        let save = document.getElementById("save");
+        let edit = document.getElementById("edit");
+        let download = document.getElementById("download");
+
+        if(path.includes('/new') || path.includes('/edit')) {
+            save.disabled = false;
+        }
+        else if (path != '/') {
+            edit.disabled = false;
+            download.disabled = false;
+        }
+    });
+    
+</script>
+
+<nav class="nav">
+    <button id="logo" onclick="make_request('post','/');">
+        CodeBin
+    </button>
+
+    <button id="new" onclick="make_request('post','/new');">
+        <i class="far fa-file"></i> New
+    </button>
+
+    <button disabled id="save" type="submit" form="save-form" value="Submit">
+        <i class="far fa-save"></i> Save
+    </button>
+
+    <button disabled id="edit" onclick="make_request('post','/edit'+path);">
+        <i class="far fa-copy"></i> Edit
+    </button>
+
+    <button disabled id="download" onclick="make_request('get','/download'+path);">
+        <i class="fas fa-download"></i> Download
+    </button>
+</nav>
