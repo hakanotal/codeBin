@@ -1,30 +1,64 @@
-body {
-    background-color: #282c34;
-    font-family: monospace;
-    margin: 0;
-}
-h1 {
-    font-size: xx-large;
-    color: white;
-    text-align: center;
-    margin-top: 10%;
-}
-h6 {
-    color: #999;
-    font-size: large;
-    text-align: center;
+:root {
+    --c0: #282c34;
+    --c1: #424856;
+    --c1: #5c6577;
+    --c2: #788297;
+    --c3: #ffffff;
 }
 
+body {
+    background-color: var(--c0);
+    font-family: monospace;
+    margin: 0;
+    position: relative;
+}
+
+/*Index page*/
+.header {
+    text-align: center;
+    margin-top: 20%;
+}
+@media (max-width: 800px) {
+    .header {
+        text-align: center;
+        margin-top: 40%;
+    }
+}
+
+h1 {
+    color: var(--c3);
+    font-size: xx-large;
+}
+h6 {
+    color: var(--c2);
+    font-size: large;
+}
+
+/*Navbar*/
 .nav {
+    display: flex;
     position: fixed;
     top: 0;
     right: 0;
     padding: 0.5rem;
     border-radius: 0.5rem;
-    background-color: #666;
+    background-color: var(--c1);
     opacity: 0.6;
     transition: opacity 200ms ease-in-out;
-    display: flex;
+}
+@media (max-width: 800px) {
+    .nav {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        background-color: var(--c1);
+        opacity: 0.6;
+        transition: opacity 200ms ease-in-out;
+    }
 }
 
 .nav:hover {
@@ -33,7 +67,7 @@ h6 {
 
 button {
     background-color: transparent;
-    color: white;
+    color: var(--c3);
     cursor: pointer;
     padding: 0.25rem 0.5rem;
     border-radius: 0.5rem;
@@ -42,27 +76,56 @@ button {
 }
 
 button:hover {
-    background-color: #999;
+    background-color: var(--c2);
 }
 
 button:disabled,
 button[disabled] {
     background-color: transparent;
-    color: #999;
+    color: var(--c2);
 }
 
 #logo {
-    font-size: 2rem;
+    font-size: 1.5rem;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*File type*/
+.file-select {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--c1);
+    opacity: 0.6;
+    transition: opacity 200ms ease-in-out;
+    font-size: 1rem;
+}
+
+.file-select:hover {
+    opacity: 1;
 }
 
 label {
-    color: #666;
+    color: var(--c3);
 }
 
 select {
-    background-color: #999;
+    background-color: var(--c1);
+    color: var(--c3);
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: right;
 }
 
+/*Code Display*/
 .wrapper {
     display: flex;
     padding: 1rem 0.5rem;
@@ -70,17 +133,17 @@ select {
 }
 
 .line-numbers {
-    color: #999;
+    color: var(--c2);
     text-align: end;
-}
-
-pre {
-    margin: 0;
 }
 
 #code-display {
     padding-top: 0;
     padding-bottom: 0;
+}
+
+pre {
+    margin: 0;
 }
 
 textarea {
@@ -89,13 +152,12 @@ textarea {
     width: 100%;
     padding: 0;
     margin-left: 1rem;
-    color: white;
+    color: var(--c3);
     min-height: 90vh;
     border: none;
     outline: none;
 }
 
 ::placeholder {
-    /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #999;
+    color: var(--c2);
 }

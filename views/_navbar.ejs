@@ -9,25 +9,23 @@
     }
     const path = document.location.pathname;
 
-    document.addEventListener("DOMContentLoaded", function(event) {
-        let save = document.getElementById("save");
-        let edit = document.getElementById("edit");
-        let download = document.getElementById("download");
+    document.addEventListener('DOMContentLoaded', function (event) {
+        let save = document.getElementById('save');
+        let edit = document.getElementById('edit');
+        let download = document.getElementById('download');
 
-        if(path.includes('/new') || path.includes('/edit')) {
+        if (path.includes('/new') || path.includes('/edit')) {
             save.disabled = false;
-        }
-        else if (path != '/') {
+        } else if (path != '/') {
             edit.disabled = false;
             download.disabled = false;
         }
     });
-    
 </script>
 
 <nav class="nav">
     <button id="logo" onclick="make_request('post','/');">
-        CodeBin
+        <i class="fas fa-code"></i> CodeBin
     </button>
 
     <button id="new" onclick="make_request('post','/new');">
@@ -42,7 +40,11 @@
         <i class="far fa-copy"></i> Edit
     </button>
 
-    <button disabled id="download" onclick="make_request('get','/download'+path);">
+    <button
+        disabled
+        id="download"
+        onclick="make_request('get','/download'+path);"
+    >
         <i class="fas fa-download"></i> Download
     </button>
 </nav>

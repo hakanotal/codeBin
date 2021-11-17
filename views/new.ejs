@@ -6,16 +6,21 @@
     <body>
         <%- include("_navbar.ejs") %>
         <form id="save-form" action="/save" method="POST">
-            <label for="codeType">select file type:</label>
-            <select name="codeType">
-                <option value="plaintext">Text</option>
-                <option value="javascript">JS</option>
-                <option value="html">HTML</option>
-                <option value="python">Python</option>
-                <option value="cpp">C++</option>
-            </select>
+            <div class="file-select">
+                <label for="codeType">File type:</label>
+                <select name="codeType">
+                    <option value="plaintext">Text</option>
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="python">Python</option>
+                    <option value="c">C</option>
+                    <option value="cpp">C++</option>
+                    <option value="java">Java</option>
+                </select>
+            </div>
 
-            <div class="wrapper">
+            <div class="wrapper" style="padding-top: 50px">
                 <div class="line-numbers">&gt;</div>
                 <textarea
                     autofocus

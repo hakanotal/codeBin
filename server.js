@@ -43,10 +43,13 @@ app.get('/edit/:id', async (req, res) => {
 app.get('/download/:id', async (req, res) => {
     const fileExt = {
         plaintext: '.txt',
-        javascript: '.js',
         html: '.html',
+        css: '.css',
+        javascript: '.js',
         python: '.py',
+        c: '.c',
         cpp: '.cpp',
+        java: '.java',
     };
 
     try {
