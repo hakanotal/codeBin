@@ -28,21 +28,34 @@
         <i class="fas fa-code"></i> CodeBin
     </button>
 
-    <button id="new" onclick="make_request('post','/new');">
+    <button id="new" class="menu" onclick="make_request('post','/new');">
         <i class="far fa-file"></i> New
     </button>
 
-    <button disabled id="save" type="submit" form="save-form" value="Submit">
+    <button
+        disabled
+        id="save"
+        class="menu"
+        type="submit"
+        form="save-form"
+        value="Submit"
+    >
         <i class="far fa-save"></i> Save
     </button>
 
-    <button disabled id="edit" onclick="make_request('post','/edit'+path);">
-        <i class="far fa-copy"></i> Edit
+    <button
+        disabled
+        id="edit"
+        class="menu"
+        onclick="make_request('post','/edit'+path);"
+    >
+        <i class="far fa-edit"></i> Edit
     </button>
 
     <button
         disabled
         id="download"
+        class="menu"
         onclick="make_request('get','/download'+path);"
     >
         <i class="fas fa-download"></i> Download

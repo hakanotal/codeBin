@@ -15,20 +15,23 @@ body {
 #particles-js {
     z-index: 0;
 }
+canvas {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 0;
+    visibility: visible;
+}
 /*Index page*/
 .header {
     position: absolute;
     z-index: 2;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 45vh;
+    right: 0;
+    left: 0;
+
     text-align: center;
-}
-@media (max-width: 800px) {
-    .header {
-        text-align: center;
-        margin-top: 40%;
-    }
 }
 
 h1 {
@@ -69,6 +72,11 @@ h6 {
 
 .nav:hover {
     opacity: 1;
+}
+
+.menu {
+    text-align: center;
+    width: 110px;
 }
 
 button {
