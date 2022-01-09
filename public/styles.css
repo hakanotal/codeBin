@@ -12,11 +12,17 @@ body {
     margin: 0;
     position: relative;
 }
-
+#particles-js {
+    z-index: 0;
+}
 /*Index page*/
 .header {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
-    margin-top: 20%;
 }
 @media (max-width: 800px) {
     .header {
