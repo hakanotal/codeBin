@@ -25,13 +25,16 @@ canvas {
 }
 /*Index page*/
 .header {
-    position: absolute;
+    display: inline-block;
+    position: relative;
     z-index: 2;
     margin-top: 45vh;
-    right: 0;
-    left: 0;
-
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
+    background-color: rgba(66, 72, 86, 0.7);
+    padding: 2rem;
+    border-radius: 1rem;
 }
 
 h1 {
