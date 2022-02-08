@@ -1,6 +1,6 @@
 <script>
     function make_request(method, url) {
-        var form = document.createElement('form');
+        let form = document.createElement('form');
         form.setAttribute('method', method);
         form.setAttribute('action', document.location.origin + url);
         form.style.display = 'hidden';
@@ -14,13 +14,32 @@
         let edit = document.getElementById('edit');
         let download = document.getElementById('download');
 
-        if (path.includes('/new') || path.includes('/edit')) {
+        if (path.includes('/edit')) {
             save.disabled = false;
-        } else if (path != '/') {
+            download.disabled = false;
+        } else if (path.includes('/new') || path == '/') {
+            save.disabled = true;
+            edit.disabled = true;
+            share.disabled = true;
+            download.disabled = true;
+        } else {
             edit.disabled = false;
+            share.disabled = false;
             download.disabled = false;
         }
     });
+
+    function copyURL() {
+        let Url = document.getElementById('url');
+        Url.value = window.location.href;
+        
+        Url.select();
+        Url.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(Url.value);
+
+        let share = document.getElementById('share');
+        share.innerHTML = '<i class="fas fa-share-alt"></i> Copied';
+    }
 </script>
 
 <nav class="nav">
@@ -51,6 +70,11 @@
     >
         <i class="far fa-edit"></i> Edit
     </button>
+
+    <button disabled id="share" class="menu" onclick="copyURL();">
+        <i class="fas fa-share-alt"></i> Share
+    </button>
+    <input type="text" id="url" style="display: none"></input>
 
     <button
         disabled

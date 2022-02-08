@@ -24,13 +24,25 @@
                 <div class="line-numbers">&gt;</div>
                 <textarea
                     autofocus
+                    id="codes"
                     name="codeFile"
                     placeholder="write your code here"
-                ><%= locals.code %></textarea>
+                >
+<%= locals.code %></textarea
+                >
             </div>
         </form>
         <script>
             autosize(document.querySelector('textarea'));
+
+            const textArea = document.getElementById('codes');
+            textArea.addEventListener('input', () => {
+                if (textArea.value != '') {
+                    document.getElementById('save').disabled = false;
+                } else {
+                    document.getElementById('save').disabled = true;
+                }
+            });
         </script>
     </body>
 </html>

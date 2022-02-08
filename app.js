@@ -1,4 +1,4 @@
-//require('dotenv').config();
+//require('dotenv').config(); // For development
 
 const app = require('./server');
 const port = process.env.PORT || 3000;
