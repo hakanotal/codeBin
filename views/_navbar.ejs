@@ -34,8 +34,8 @@
             document.getElementById('share').addEventListener('click', function() {
               if(navigator.share) {
                 navigator.share({
-                    title: '</> CodeBin'
-                    text: 'Check out this code.'
+                    title: '</> CodeBin',
+                    text: 'Check out this code.',
                     url: window.location.href
                 })
                 .then(() => console.log('Share complete'))
